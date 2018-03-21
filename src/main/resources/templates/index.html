@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{//code.jquery.com/jquery-3.2.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+
+<div id="hostsSize">
+    <h1>Hosts</h1>
+    <input type="text" placeholder="Lan Size" class="hosts"/>
+</div>
+<div >
+    <input type="text" placeholder="Number of /30 networks" id="routerNetNumbers" />
+</div>
+<div id="IP">
+    <input type="text" placeholder="IP to be Subnetted" class="prefix"/> / <input type="text" placeholder="CIDR" class="cidr"/>
+</div>
+<table id="result">
+    <thead>
+        <td>Prefix</td>
+        <td>Broadcast</td>
+    </thead>
+    <tbody></tbody>
+</table>
+<button id="newRow">New Lan</button>
+<button id="calculate">Calculate</button>
+
+
+<script type="text/javascript">
+    $('#newRow').on('click',function(){
+        insertNewTextField();
+    })
+
+    $('#calculate').on('click',function(){
+        calculate();
+    })
+</script>
+</body>
+</html>
